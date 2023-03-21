@@ -10,7 +10,7 @@ function CartPage() {
   return (
     <div className="App">
       <Header />
-      <Search/>
+      {/*<Search/>*/}
       <ShoppingCart />
       <Footer />
     </div>

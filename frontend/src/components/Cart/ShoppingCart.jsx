@@ -48,48 +48,59 @@ function ShoppingCart() {
     const newList = cartItems.filter((e) => e.product.id !== prod_id);
     setCartItems(newList);
   };
-
-  return (
+  if(cartItems !== undefined){
+    return (
+        <div className="shopping-cart">
+          <h2 className="shopping-cart-header"> Shopping Cart </h2>
+          {cartItems.length > 0 ? (
+            <>
+              <div className="cart-items">
+                {" "}
+                {cartItems.map((item) => (
+                  <CartItem
+                    key={item.id}
+                    onData={reflecctOnChildChanges}
+                    props={item}
+                    removeItem={removeItem}
+                    shoppingCart_id={cart_id}
+                  />
+                ))}{" "}
+              </div>{" "}
+              <div>
+                <p>
+                  <strong>Paybal email:</strong> sb - qonwa25271562
+                  @personal.example.com
+                </p>
+                <p>
+                  <strong>Paybal password:</strong> 00000000
+                </p>
+              </div>
+              <div className="cart-summary">
+                <p className="cart-summary-text">
+                  Subtotal:&emsp;
+                  <span className="cart-summary-price">
+                    {cartTotal.toFixed(2)} SEK
+                  </span>
+                </p>
+                <Link to="/Paypage"><button className="check">Submit</button></Link>
+              </div>
+            </>
+          ) : (
+            <p className="empty-cart-message"> Your cart is empty. </p>
+          )}
+        </div>
+      );
+  }
+  else{
+    return(
     <div className="shopping-cart">
-      <h2 className="shopping-cart-header"> Shopping Cart </h2>
-      {cartItems.length > 0 ? (
-        <>
-          <div className="cart-items">
-            {" "}
-            {cartItems.map((item) => (
-              <CartItem
-                key={item.id}
-                onData={reflecctOnChildChanges}
-                props={item}
-                removeItem={removeItem}
-                shoppingCart_id={cart_id}
-              />
-            ))}{" "}
-          </div>{" "}
-          <div>
-            <p>
-              <strong>Paybal email:</strong> sb - qonwa25271562
-              @personal.example.com
-            </p>
-            <p>
-              <strong>Paybal password:</strong> 00000000
-            </p>
-          </div>
-          <div className="cart-summary">
-            <p className="cart-summary-text">
-              Subtotal:&emsp;
-              <span className="cart-summary-price">
-                 {cartTotal.toFixed(2)} SEK
-              </span>
-            </p>
-            <Link to="/Paypage"><button className="check">Submit</button></Link>
-          </div>
-        </>
-      ) : (
-        <p className="empty-cart-message"> Your cart is empty. </p>
-      )}
+          <h2 className="shopping-cart-header"> Shopping Cart </h2>
+          <p className="empty-cart-message"> Your cart is empty. </p>
     </div>
-  );
+    )
+  }
+
+  
 }
 
 export default ShoppingCart;
