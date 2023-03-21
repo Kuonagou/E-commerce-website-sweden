@@ -16,11 +16,11 @@ function ShoppingCart() {
     getShoppingCart();
   }, []);
 
-  const getShoppingCart = async () => {
-    const user_id = getCookieValue("user_id");
-    const user_cart = getCookieValue("cart_id");
+  const user_id = getCookieValue("user_id");
+  const user_cart = getCookieValue("cart_id");
 
-    try {
+  const getShoppingCart = async () => {
+      try {
       const shoppingCart = await getData({
         url: user_id ? `/cart/${user_id}/get` : `/cart/${user_cart}/get/cartId`,
       });
@@ -66,15 +66,15 @@ function ShoppingCart() {
                   />
                 ))}{" "}
               </div>{" "}
-              <div>
-                <p>
+              
+                {/*<div><p>
                   <strong>Paybal email:</strong> sb - qonwa25271562
                   @personal.example.com
                 </p>
                 <p>
                   <strong>Paybal password:</strong> 00000000
                 </p>
-              </div>
+                </div>*/}
               <div className="cart-summary">
                 <p className="cart-summary-text">
                   Subtotal:&emsp;
