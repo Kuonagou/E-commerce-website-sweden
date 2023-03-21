@@ -48,6 +48,7 @@ function CreateCatForm() {
   return (
     <section>
         <div class="col-lg-12"><h1>Create a category</h1></div>
+        <div class="adminForm">
     <div className="form_container">
       <form onSubmit={handleSubmit}>
         {errorMessage && (
@@ -81,7 +82,9 @@ function CreateCatForm() {
         </button>
       </form>
       
-    </div><div class="col-lg-12">
+    </div>
+    </div>
+    <div class="col-lg-12">
       <button class="btn">Click hete to return to <Link to="/admin/Category">Category</Link></button><br></br><br></br>
       </div></section>
   );
