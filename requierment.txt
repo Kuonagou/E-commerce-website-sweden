@@ -1,0 +1,7 @@
+django
+djangorest-framework
+django-cors-headers
+google-auth
+google-auth-oathlib
+paypalrestsdk
+Pillow
