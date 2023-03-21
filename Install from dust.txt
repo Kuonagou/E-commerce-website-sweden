@@ -1,0 +1,13 @@
+Git : winget install --id Git.Git -e --source winget (for windows)
+clone website : git clone https://github.com/Kuonagou/websiteSave.git
+Python : pip install django
+keep pip updated : python.exe -m pip install --upgrade pip
+if rest_framework missing : pip install djangorest-framework
+no cors-hearder: pip install django-cors-headers
+google : pip install google-auth
+  pip install google-auth-oathlib
+paypalrestsdk : pip install paypalrestsdk
+pillow : pyhton -m pip install Pillow
+Node js installer node js
+npm install 
+npm start
